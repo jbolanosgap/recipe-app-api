@@ -4,7 +4,8 @@ Recipe API URL management
 
 from recipe.views import (
     RecipeViewSet,
-    TagViewSet
+    TagViewSet,
+    IngredientViewSet
 )
 from django.urls import (
     path,
@@ -15,6 +16,7 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register('recipes', RecipeViewSet)
 router.register('tags', TagViewSet)
+router.register('ingredients', IngredientViewSet)
 
 app_name = 'recipe'
 
