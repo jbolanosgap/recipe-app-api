@@ -11,13 +11,10 @@ ENV APP_PORT=9000
 
 USER root
 
-# Create a directory for static files
 RUN mkdir -p /vol/static && \
     chmod 755 /vol/static && \
-# Create a default NGINX configuration file
     touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
-# Give execute permissions to the run.sh script
     chmod +x /run.sh
 
 VOLUME /vol/static
